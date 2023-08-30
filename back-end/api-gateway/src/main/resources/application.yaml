@@ -1,0 +1,42 @@
+#help from https://www.youtube.com/watch?v=HFl2dzhVuUo and https://javatodev.com/microservices-setup-api-gateway-using-spring-cloud-gateway/
+server:
+  port: 8060
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+#logging help from here https://stackoverflow.com/questions/54117061/springcloudgateway-log-incoming-request-url-and-corresponding-route-uri
+logging:
+  level:
+    reactor:
+      netty: INFO
+    org:
+      springframework:
+        cloud:
+          gateway: TRACE
+
+
+spring:
+  application:
+    name: api-gateway
+  datasource:
+    url: jdbc:mysql://localhost:3306/flashcard_db
+    username: root
+    password: admin123
+  cloud:
+    gateway:
+      routes:
+        - id: user-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/users/**
+        - id: lesson-service
+          uri: http://localhost:8082
+          predicates:
+            - Path=/lessons/**
+      httpclient:
+        wiretap: true
+      httpserver:
+        wiretap: true
