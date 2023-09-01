@@ -1,0 +1,78 @@
+<div class="d-flex flex-column">
+    <app-nav-bar></app-nav-bar>
+    <section class="vh-100 back">
+        <div class="text-center">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-4 side-col">
+                        
+                    </div>
+                    <div class="col-sm-4 form-container">
+                        <form style="max-width:auto; margin:auto">
+                            <div class="sign-heading mt-4" style="color:white">
+                                <h1 class="h3 mb-3 font-weight-normal mt-4">Update your password</h1>
+                            </div>
+                
+                            <div class="mt-3 mb-3">
+                                <mat-form-field [style.width.%]=70>
+                                    <mat-label>Enter your email</mat-label>
+                                    <input type="text" name="email" [(ngModel)]="email" id="email" matInput required autofocus>
+                                </mat-form-field>
+                            </div>
+
+
+                            <div class="mt-3 mb-3">
+                                <mat-form-field [style.width.%]=70>
+                                    <mat-label>Old Password</mat-label>
+                                    <input matInput name="oldPassword" [(ngModel)]="oldPassword" [type]="oldPassHide ? 'password' : 'text'" required>
+                                    <button mat-icon-button matSuffix (click)="oldPassHide = !oldPassHide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="oldPassHide">
+                                      <mat-icon>{{oldPassHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                    </button>
+                                </mat-form-field>
+                            </div>
+            
+                            <div class="mt-3 mb-3">
+                                <mat-form-field [style.width.%]=70>
+                                    <mat-label>Confirm Old Password</mat-label>
+                                    <input matInput name="confirmOldPassword" [(ngModel)]="confirmOldPassword" [type]="oldConfirmPassHide ? 'password' : 'text'" required>
+                                    <button mat-icon-button matSuffix (click)="oldConfirmPassHide = !oldConfirmPassHide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="oldConfirmPassHide">
+                                      <mat-icon>{{oldConfirmPassHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                    </button>
+                                </mat-form-field>
+                            </div>
+                
+                            <div class="mt-3 mb-3">
+                                <mat-form-field [style.width.%]=70>
+                                    <mat-label>New Password</mat-label>
+                                    <input matInput name="newPassword" [(ngModel)]="newPassword" [type]="newPassHide ? 'password' : 'text'" required>
+                                    <button mat-icon-button matSuffix (click)="newPassHide = !newPassHide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="newPassHide">
+                                      <mat-icon>{{newPassHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                    </button>
+                                </mat-form-field>
+                            </div>
+            
+                            <div class="mt-3 mb-3">
+                                <mat-form-field [style.width.%]=70>
+                                    <mat-label>Confirm New Password</mat-label>
+                                    <input matInput name="confirmNewPassword" [(ngModel)]="confirmNewPassword" [type]="newConfirmPassHide ? 'password' : 'text'" required>
+                                    <button mat-icon-button matSuffix (click)="newConfirmPassHide = !newConfirmPassHide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="newConfirmPassHide">
+                                      <mat-icon>{{newConfirmPassHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                    </button>
+                                </mat-form-field>
+                            </div>
+
+                
+                            <div class="mt-4">
+                                <button mat-raised-button (click)="updateAccount()">Update account</button>
+                            </div>
+            
+                        </form>
+                    </div>
+                    <div class="col-sm-4 side-col flex-lg-shrink-1">
+                    </div>
+                </div>
+                </div>
+        </div>
+    </section>
+</div>
+

@@ -1,0 +1,27 @@
+<div class="d-flex flex-column page">
+    <app-nav-bar></app-nav-bar>
+    <section class="min-vh-100 back">
+        <div class="container-fluid p-5">
+            <ul>
+                <li *ngIf="!hasLessons()">You haven't created a lesson.</li>
+                <li *ngFor="let lesson of lessons">
+
+                    <mat-card class="lesson-card">
+                        <mat-card-header class="lesson-header">
+                            <mat-card-title class="lesson-card-title">{{lesson.title}}</mat-card-title>
+                            <mat-card-actions class="lesson-card-actions" style="align-content: right;">
+                                <button mat-button (click)="accessCard(lesson.id || 0)" class="study-button" >Study this lesson</button>
+                            </mat-card-actions>
+                            <mat-card-subtitle class="lesson-card-subtitle">Subject: {{lesson.subject}}</mat-card-subtitle>
+                        </mat-card-header>
+
+                        <mat-card-content class="lesson-card-content">
+                            <p>{{lesson.description}}</p>
+                        </mat-card-content>
+                    </mat-card>
+                </li>
+            </ul>
+        </div>
+    </section>
+</div>
+

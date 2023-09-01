@@ -1,0 +1,107 @@
+<div class="d-flex flex-column">
+    <app-nav-bar></app-nav-bar>
+    <section class="min-vh-100 back">
+        <div class="container-fluid cart-container">
+            <div class="row">
+                <div class="col-lg-1">
+
+                </div>
+                <div class="col-lg-10">
+                    <div class="d-flex flex-column form-box">
+                        <h1>Create a Lesson</h1>
+                        <hr>
+                        <div class="d-flex flex-column lesson-form">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <mat-form-field class="example-full-width">
+                                            <mat-label>Title</mat-label>
+                                            <input name="title" id="title" [(ngModel)]="title" matInput>
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <mat-form-field class="example-full-width">
+                                            <mat-label>Subject</mat-label>
+                                            <input name="subject" id="subject" [(ngModel)]="subject" matInput>
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <mat-form-field class="example-full-width">
+                                            <mat-label>Description</mat-label>
+                                            <textarea matInput [(ngModel)]="description"></textarea>
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="row">
+                                            <div class="col-lg-2">
+                                                <h3>Public?</h3>
+                                            </div>
+                                            <div class="col-lg-1">
+                                                <mat-checkbox class="example-margin" [(ngModel)]="isPublic"></mat-checkbox>
+                                            </div>
+                                            <div class="col-lg-6">
+
+                                            </div>
+                                            <div class="col-lg-3" style="float: right">
+                                                <button style="width: 100%" mat-stroked-button color="warn" (click)="saveLesson()">Save lesson</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <h2>Flashcards</h2>
+
+                    <div *ngFor="let flashcard of flashcards" class="d-flex flex-column flashcard-box">
+                        <div class="d-flex flex-column lesson-form">
+                            <h1>{{(getIndexFromFlashcard(flashcard))}}</h1>
+                            <hr>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <mat-form-field class="example-full-width">
+                                            <mat-label>Term</mat-label>
+                                            <input name="term" id="term" [(ngModel)]="flashcard.term" matInput>
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <mat-form-field class="example-full-width">
+                                            <mat-label>Description</mat-label>
+                                            <textarea matInput [(ngModel)]="flashcard.description"></textarea>
+                                        </mat-form-field>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="float: right;">
+                                        <button mat-raised-button style="width:100%" color="warn" (click)="removeFlashcard(flashcard)">Remove flashcard</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+
+                    <div class="ripple-box"
+                    matRipple (click)="addFlashcard()">
+                    <h1>+</h1>
+                    </div>
+
+                </div>
+                <div class="col-lg-1">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+

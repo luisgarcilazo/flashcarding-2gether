@@ -1,0 +1,8 @@
+.footer-row {
+    color: white;
+}
+
+a, a:link, a:visited {
+    text-decoration: none;
+    color: rgb(206, 205, 205)
+}

@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+.back {
+    background: rgb(103,58,183);
+    background: radial-gradient(circle, rgba(103,58,183,1) 0%, rgba(236,169,203,1) 100%);
+    font-family: 'Poppins', sans-serif;
+}
+.first-headline {
+    background-color: rgb(245, 198, 221);
+}
+
+.first-headline-middle {
+    background-color: rgb(245, 167, 205);
+}
+.features-title {
+    margin: 15px;
+    padding: 15px;
+    background-color: rgb(245, 167, 205);
+    text-align: center;
+}
+.second-headline {
+    background-color: rgb(243, 148, 194);
+}
+.second-headline-flex {
+    margin: 15px 10px 15px 10px;
+    padding: 35px;
+    font-size: 25px;
+    gap: 15px;
+    justify-content: space-around
+}
+.headline-first-item {
+    background-color: rgb(238, 128, 181);
+    padding: 35px;
+}
+
+.headline-second-item {
+    background-color: rgb(238, 128, 181);
+    padding: 35px;
+}
+
+.headline-third-item {
+    background-color: rgb(238, 128, 181);
+    padding: 35px;
+}
+headline-item-list {
+
+}
+/* help from here to style list https://stackoverflow.com/questions/28977320/how-do-i-get-the-bullets-of-an-unordered-list-to-center-with-the-text */
+ul {
+    padding-left: 0;
+    text-align: center;
+    list-style-position: inside;
+}
