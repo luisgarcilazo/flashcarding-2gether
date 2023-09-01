@@ -40,9 +40,8 @@ public class SecurityConfig {
                 configurer
                         .requestMatchers(HttpMethod.GET, "/users").permitAll()
                         .requestMatchers(HttpMethod.GET, "/users/{username}").permitAll()
-                        .requestMatchers(HttpMethod.PUT, "/users/{username}").permitAll()
-                        .requestMatchers(HttpMethod.DELETE, "/users/{username}").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/users/dev").permitAll()
+                        .requestMatchers(HttpMethod.DELETE, "/users/{username}").hasRole("DEV")
+                        .requestMatchers(HttpMethod.POST, "/users/dev").hasRole("DEV")
                         .requestMatchers(HttpMethod.POST, "/users/basic").permitAll()
                         .requestMatchers(HttpMethod.POST,"/users/login").permitAll()
                         .requestMatchers(HttpMethod.PUT,"/users/update/password").hasRole("BASIC")
