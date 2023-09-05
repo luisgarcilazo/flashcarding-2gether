@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+
+/* box shadow from here https://codepen.io/sdthornton/pen/wBZdXq */
+.form-container {
+    font-family: 'Poppins';
+    margin-top: 150px;
+    background-color: #673AB7;
+    border-color: rgb(240, 240, 240);
+    border-radius: 5%;
+    color: white;
+    padding:50px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+.back {
+    background: rgb(103,58,183);
+    background: radial-gradient(circle, rgba(103,58,183,1) 0%, rgba(236,169,203,1) 100%)
+}
+.side-col {
+
+}

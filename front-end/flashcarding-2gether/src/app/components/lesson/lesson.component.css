@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+.back {
+    background: rgb(103,58,183);
+    background: radial-gradient(circle, rgba(103,58,183,1) 0%, rgba(236,169,203,1) 100%);
+    font-family: 'Poppins', sans-serif;
+}
+.lesson-card {
+
+}
+.lesson-info {
+    word-break: break-all;
+}
+.interactive-flashcard {
+    min-height: 450px;
+    padding: 75px;
+    cursor: pointer;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    word-break: break-all
+}
+.interactive-flashcard-content {
+    margin: auto;
+    font-size: 45px;
+    text-align: center;
+    text-shadow:1px 1px 10px #fff, 1px 1px 10px rgba(236,169,203,1);
+    color: rgba(103,58,183,1);
+    word-break: break-all
+}
+
+.back-icon {
+    background-color: bisque;
+    border-color: bisque;
+    border-radius: 100%;
+    border-style: solid;
+    color: rgba(103,58,183,1);
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.forward-icon {
+    background-color: bisque;
+    border-radius: 100%;
+    border-style: solid;
+    border-color: bisque;
+    color: rgba(103,58,183,1);
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 35px;
+    cursor: pointer;
+}
+.flashcard-count {
+    color: white;
+    height: 55px;
+    line-height: 50px;
+}
+
+.flashcard-box {
+    background-color: rgb(245, 238, 238);
+    margin: 50px;
+    padding:50px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+.example-full-width {
+    width: 100%;
+}
+.flashcards-display {
+    background-color: bisque;
+    margin-top: 35px;
+    padding: 15px;
+}
+
+.flashcards-display-title {
+    font-size: 75px;
+    font-style: bold;
+    text-align: center;
+    text-shadow:1px 1px 10px #fff, 1px 1px 10px rgba(103,58,183,1);
+}
+.flashcard-term {
+    font-size: 35px;
+    word-break: break-all
+}
+.flashcard-description {
+    font-size: 25px;
+    word-break: break-all
+}
+.back-icon:active {
+    background-color: rgb(170, 109, 35);
+    color: bisque;
+}
+.forward-icon:active {
+    background-color: rgb(170, 109, 35);
+    color: bisque;
+}

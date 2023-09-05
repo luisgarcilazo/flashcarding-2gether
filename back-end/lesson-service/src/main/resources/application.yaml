@@ -1,0 +1,16 @@
+#help from https://www.youtube.com/watch?v=HFl2dzhVuUo and https://javatodev.com/microservices-setup-api-gateway-using-spring-cloud-gateway/
+server:
+  port: 8082
+
+spring:
+  application:
+    name: lesson-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/flashcard_db
+    username: root
+    password: admin123
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

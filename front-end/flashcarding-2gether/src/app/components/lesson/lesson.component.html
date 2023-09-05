@@ -1,0 +1,95 @@
+<div class="d-flex flex-column page">
+    <app-nav-bar></app-nav-bar>
+    <section class="min-vh-100 back">
+        <div class="container-fluid p-5 lesson-container">
+            <div class="row">
+                <div class="col-lg-2" style="margin-bottom: 50px;">
+                    <div class="row lesson-info">
+                        <mat-card class="lesson-card">
+                            <mat-card-header class="lesson-header">
+                                <mat-card-title class="lesson-card-title">{{lesson.title}}</mat-card-title>
+                                <mat-card-subtitle class="lesson-card-subtitle">Subject: {{lesson.subject}}</mat-card-subtitle>
+                                <mat-card-subtitle class="lesson-card-subtitle">Created by: {{lesson.username}}</mat-card-subtitle>
+                                <mat-card-subtitle class="lesson-card-subtitle">Created on: {{lesson.creationDate}}</mat-card-subtitle>
+                                <mat-card-subtitle class="lesson-card-subtitle" [textContent]="lesson.public ? 'Public Lesson' : 'Private Lesson'"></mat-card-subtitle>
+                            </mat-card-header>
+        
+                            <mat-card-content class="lesson-card-content">
+                                <p>{{lesson.description}}</p>
+                            </mat-card-content>
+        
+                        </mat-card>
+                    </div>
+                    <div class="row">
+
+                    </div>
+                </div>
+                <div class="col-lg-10">
+                    <mat-card class="interactive-flashcard" (click)="flipFlashcard()">
+                        <mat-card-content class="interactive-flashcard-content d-flex justify-content-center">
+                            <!-- one liner text stuff from here https://stackoverflow.com/questions/36549625/angular2-bind-using-conditional-operator -->
+                            <p style='word-break: break-all'[textContent]="displayTerm ? lesson.flashcards[flashcardIndex].term : lesson.flashcards[flashcardIndex].description"></p>
+                        </mat-card-content>
+                    </mat-card>
+                    <div class="container-fluid" style="margin-top: 15px;">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-2 col-xs-2">
+                                
+                            </div>
+                            <!-- help from here https://stackoverflow.com/questions/35163164/how-to-center-content-in-a-bootstrap-column#:~:text=Use%20d%2Dflex%20justify%2Dcontent,center%20everything%20inside%20that%20column.&text=If%20you%20have%20text%20and,%2Dcenter%20and%20text%2Dcenter%20.&text=%3Cdiv%20class%3D%22col%20text,center%22%3E%20worked%20for%20me. -->
+                            <div class="col-md-1 col-sm-1 d-flex justify-content-center" >
+                                <mat-icon class="back-icon" (click)="goBackward()">keyboard_arrow_left</mat-icon>
+                            </div>
+                            <div class="col-md-2 col-sm-1 flashcard-count d-flex justify-content-center">
+                                <p> {{flashcardIndex+1}} / {{lesson.flashcards.length}}</p>
+                            </div>
+                            <div class="col-md-1 col-sm-2 d-flex justify-content-center">
+                                <mat-icon class="forward-icon" (click)="goForward()">keyboard_arrow_right</mat-icon>
+                            </div>
+                            <div class="col-md-4 col-sm-2">
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-sm-8 flashcards-display">
+                    <h1 class="flashcards-display-title">Lesson Flashcards</h1>
+                    <div *ngFor="let flashcard of lesson.flashcards" class="d-flex flex-column flashcard-box">
+                        <div class="d-flex flex-column lesson-form">
+                            <h1>#{{(getIndexFromFlashcard(flashcard))}}</h1>
+                            <hr>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <div class="example-full-width">
+                                            <p class="flashcard-term">{{flashcard.term}}</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="example-full-width">
+                                            <p class="flashcard-description">-{{flashcard.description}}</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+
+                </div>
+            </div>
+        </div>
+        <ul>
+
+        </ul>
+        <app-footer></app-footer>
+    </section>
+</div>
+

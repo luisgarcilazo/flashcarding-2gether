@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+.back {
+    background: rgb(103,58,183);
+    background: radial-gradient(circle, rgba(103,58,183,1) 0%, rgba(236,169,203,1) 100%);
+    font-family: 'Poppins', sans-serif;
+}
+h1,h2 {
+    text-align: center;
+}
+/* box shadow from here https://codepen.io/sdthornton/pen/wBZdXq */
+.form-box {
+    background-color: rgb(245, 238, 238);
+    margin: 50px;
+    padding:50px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+.flashcard-box {
+    background-color: rgb(245, 238, 238);
+    margin: 50px;
+    padding:50px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+.example-full-width {
+    width: 100%;
+}
+h2 {
+    color: white;
+}
+.ripple-box {
+    background-color: rgba(157, 105, 248, 0.966);
+    margin: 50px;
+    padding:50px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    cursor: pointer;
+    text-align: center;
+}
